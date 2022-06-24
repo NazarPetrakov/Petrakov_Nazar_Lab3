@@ -18,16 +18,19 @@ namespace Laboratorna3
             JsonSerializer serializer = new JsonSerializer();
 
             string newstr = serializer.Deserialize<string>(reader);
-           
+        
 
             List<string> engText = newstr.Split(' ').ToList();
+           
+
+
 
             for (int i = 0; i < engText.Count; i++)
             {
                 rep = 0;
                 for (int j = engText.Count - 1; j >= 0; j--)
                 {
-                    if (engText[j].Equals(engText[i]))
+                    if (engText[j].ToLower().Equals(engText[i].ToLower()))
                     {
                         rep++;
                     }
